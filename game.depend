@@ -1,0 +1,149 @@
+# depslib dependency file v1.0
+1441048351 source:/home/mew/Desktop/game/main.cpp
+	"globals.h"
+
+1350963664 /usr/include/physfs.h
+
+1441053680 /home/mew/Desktop/game/include/globals.h
+	<physfs.h>
+	<SFML/Graphics.hpp>
+	<iostream>
+	<lua5.2/lua.h>
+	<lua5.2/lualib.h>
+	<lua5.2/lauxlib.h>
+	"EventManager.h"
+	"physfsManager.h"
+	"luaManager.h"
+
+1441046673 /home/mew/Desktop/game/include/EventManager.h
+
+1441046865 source:/home/mew/Desktop/game/src/EventManager.cpp
+	"globals.h"
+
+1441055470 /home/mew/Desktop/game/include/physfsManager.h
+
+1441056064 source:/home/mew/Desktop/game/src/physfsManager.cpp
+	"globals.h"
+
+1441052873 /home/mew/Desktop/game/include/luaManager.h
+
+1389370498 /usr/include/lua5.2/lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1414221269 /usr/include/lua5.2/luaconf.h
+	<limits.h>
+	<stddef.h>
+	"lua5.2-deb-multiarch.h"
+	<stdio.h>
+	<math.h>
+
+1427353150 /usr/include/limits.h
+	<features.h>
+	<bits/wordsize.h>
+	<bits/posix1_lim.h>
+	<bits/posix2_lim.h>
+	<bits/xopen_lim.h>
+
+1427353150 /usr/include/features.h
+	<stdc-predef.h>
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1427353150 /usr/include/stdc-predef.h
+
+1427353165 /usr/include/stdio.h
+	<features.h>
+	<stddef.h>
+	<bits/types.h>
+	<libio.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/sys_errlist.h>
+	<getopt.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+	<bits/stdio-ldbl.h>
+
+1427353165 /usr/include/libio.h
+	<_G_config.h>
+	<stdarg.h>
+	<sys/cdefs.h>
+	<bits/stdio-lock.h>
+	<shlib-compat.h>
+	<bits/libio-ldbl.h>
+
+1427353165 /usr/include/_G_config.h
+	<bits/types.h>
+	<stddef.h>
+	<wchar.h>
+	<gconv.h>
+
+1427353167 /usr/include/wchar.h
+	<features.h>
+	<stdio.h>
+	<stdarg.h>
+	<bits/wchar.h>
+	<stddef.h>
+	<wctype.h>
+	<xlocale.h>
+	<xlocale.h>
+	<xlocale.h>
+	<wctype.h>
+	<bits/wchar2.h>
+	<bits/wchar-ldbl.h>
+
+1427353171 /usr/include/wctype.h
+	<features.h>
+	<bits/types.h>
+	<wchar.h>
+	<endian.h>
+	<xlocale.h>
+
+1427353166 /usr/include/endian.h
+	<features.h>
+	<bits/endian.h>
+	<bits/byteswap.h>
+
+1427353151 /usr/include/xlocale.h
+
+1427353150 /usr/include/gconv.h
+	<features.h>
+	<wchar.h>
+	<stddef.h>
+
+1427353168 /usr/include/getopt.h
+	<ctype.h>
+
+1427353161 /usr/include/ctype.h
+	<features.h>
+	<bits/types.h>
+	<endian.h>
+	<xlocale.h>
+
+1427353163 /usr/include/math.h
+	<features.h>
+	<bits/huge_val.h>
+	<bits/huge_valf.h>
+	<bits/huge_vall.h>
+	<bits/inf.h>
+	<bits/nan.h>
+	<bits/mathdef.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls.h>
+	<bits/mathinline.h>
+	<bits/math-finite.h>
+
+1389370498 /usr/include/lua5.2/lualib.h
+	"lua.h"
+
+1389370498 /usr/include/lua5.2/lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1441055188 source:/home/mew/Desktop/game/src/luaManager.cpp
+	"globals.h"
+
