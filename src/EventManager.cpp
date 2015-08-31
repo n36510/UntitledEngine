@@ -13,7 +13,7 @@ EventManager::~EventManager()
 void EventManager::Run() {
     while (window->pollEvent(this->event))
     {
-        if (this->event.type = sf::Event::Closed) {
+        if (this->event.type == sf::Event::Closed) {
             window->close();
         }
     }
