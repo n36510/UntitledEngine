@@ -9,7 +9,7 @@ physfsManager::~physfsManager()
 {
     //dtor
 }
-string physfsManager::loadFile(string fileName) {
+void* physfsManager::loadFile(string fileName) {
     PHYSFS_File* file = PHYSFS_openRead(fileName.c_str());
     PHYSFS_sint64 file_size = PHYSFS_fileLength(file);
     char* buffer = new char[sizeof(char) * file_size + 1];

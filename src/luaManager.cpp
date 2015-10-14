@@ -1,9 +1,15 @@
 #include "globals.h"
 
-luaManager::luaManager()
+lua_State *L;
+sf::RenderWindow* app;
+
+
+luaManager::luaManager(sf::RenderWindow* win)
 {
-    this->L = luaL_newstate();
-    luaL_openlibs(this->L);
+    app = win;
+    L = luaL_newstate();
+    luaL_openlibs(L);
+
 }
 
 luaManager::~luaManager()
@@ -12,5 +18,7 @@ luaManager::~luaManager()
 }
 
 void luaManager::runScript(string script) {
-    luaL_dostring(this->L,script.c_str());
+    luaL_dostring(L,script.c_str());
 }
+
+

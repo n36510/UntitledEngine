@@ -5,12 +5,12 @@
 class luaManager
 {
     public:
-        luaManager();
+        luaManager(sf::RenderWindow* win);
         virtual ~luaManager();
         void runScript(string filename);
     protected:
     private:
-    lua_State *L;
+
 };
 
 #endif // LUAMANAGER_H

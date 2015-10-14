@@ -8,7 +8,8 @@ class physfsManager
         physfsManager();
         bool Run();
         virtual ~physfsManager();
-        string loadFile(string fileName);
+        void* loadFile(string fileName);
+
     protected:
     private:
 };

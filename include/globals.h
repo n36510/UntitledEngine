@@ -12,12 +12,14 @@ extern "C" {
 #include <lua5.2/lauxlib.h>
 
 }
-
+#include "LuaBridge/LuaBridge.h"
 using namespace std;
 
 #include "EventManager.h"
 #include "physfsManager.h"
 #include "luaManager.h"
-
+#include "Animation.h"
+#include "AnimatedSprite.h"
+#include "Player.h"
 
 #endif // GLOBALS_H_INCLUDED
