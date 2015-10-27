@@ -1,31 +1,35 @@
 # depslib dependency file v1.0
-1441056262 source:/home/mew/Desktop/game/main.cpp
+1444922839 source:/home/mew/Desktop/game/main.cpp
 	"globals.h"
 
 1350963664 /usr/include/physfs.h
 
-1441053680 /home/mew/Desktop/game/include/globals.h
+1444839664 /home/mew/Desktop/game/include/globals.h
 	<physfs.h>
 	<SFML/Graphics.hpp>
 	<iostream>
 	<lua5.2/lua.h>
 	<lua5.2/lualib.h>
 	<lua5.2/lauxlib.h>
+	"LuaBridge/LuaBridge.h"
 	"EventManager.h"
 	"physfsManager.h"
 	"luaManager.h"
+	"Animation.h"
+	"AnimatedSprite.h"
+	"Player.h"
 
 1441046673 /home/mew/Desktop/game/include/EventManager.h
 
-1441046865 source:/home/mew/Desktop/game/src/EventManager.cpp
+1441058478 source:/home/mew/Desktop/game/src/EventManager.cpp
 	"globals.h"
 
-1441055470 /home/mew/Desktop/game/include/physfsManager.h
+1444869004 /home/mew/Desktop/game/include/physfsManager.h
 
-1441056064 source:/home/mew/Desktop/game/src/physfsManager.cpp
+1444868990 source:/home/mew/Desktop/game/src/physfsManager.cpp
 	"globals.h"
 
-1441052873 /home/mew/Desktop/game/include/luaManager.h
+1441063040 /home/mew/Desktop/game/include/luaManager.h
 
 1389370498 /usr/include/lua5.2/lua.h
 	<stdarg.h>
@@ -144,6 +148,76 @@
 	<stdio.h>
 	"lua.h"
 
-1441055188 source:/home/mew/Desktop/game/src/luaManager.cpp
+1441115959 source:/home/mew/Desktop/game/src/luaManager.cpp
 	"globals.h"
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/LuaBridge.h
+	<cassert>
+	<sstream>
+	<stdexcept>
+	<string>
+	<typeinfo>
+	"detail/LuaHelpers.h"
+	"detail/TypeTraits.h"
+	"detail/TypeList.h"
+	"detail/FuncTraits.h"
+	"detail/Constructor.h"
+	"detail/Stack.h"
+	"detail/ClassInfo.h"
+	"detail/LuaException.h"
+	"detail/LuaRef.h"
+	"detail/Iterator.h"
+	"detail/Userdata.h"
+	"detail/CFunctions.h"
+	"detail/Namespace.h"
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/LuaHelpers.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/TypeTraits.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/TypeList.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/FuncTraits.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/Constructor.h
+
+1441145808 /home/mew/Desktop/game/include/LuaBridge/detail/Stack.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/ClassInfo.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/LuaException.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/LuaRef.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/Iterator.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/Userdata.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/CFunctions.h
+
+1382198258 /home/mew/Desktop/game/include/LuaBridge/detail/Namespace.h
+
+1444868743 /home/mew/Desktop/game/include/Animation.h
+	<vector>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Texture.hpp>
+
+1443219982 /home/mew/Desktop/game/include/AnimatedSprite.h
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1444868858 source:/home/mew/Desktop/game/src/AnimatedSprite.cpp
+	"globals.h"
+
+1444868728 source:/home/mew/Desktop/game/src/Animation.cpp
+	"globals.h"
+
+1445960177 /home/mew/Desktop/game/include/Player.h
+
+1445960206 source:/home/mew/Desktop/game/src/Player.cpp
+	"globals.h"
+	<math.h>
 

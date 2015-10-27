@@ -30,7 +30,7 @@ Animation::Animation() : m_texture(NULL)
 
 }
 
-void Animation::addFrame(sf::IntRect rect)
+void Animation::addFrame(sf::IntRect* rect)
 {
     m_frames.push_back(rect);
 }
@@ -50,7 +50,7 @@ std::size_t Animation::getSize() const
     return m_frames.size();
 }
 
-const sf::IntRect& Animation::getFrame(std::size_t n) const
+const sf::IntRect* Animation::getFrame(std::size_t n) const
 {
     return m_frames[n];
 }

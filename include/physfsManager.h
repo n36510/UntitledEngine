@@ -8,7 +8,8 @@ class physfsManager
         physfsManager();
         bool Run();
         virtual ~physfsManager();
-        void* loadFile(string fileName);
+        sf::Uint8* loadFile(string fileName);
+        sf::Texture* loadPng(string filename);
 
     protected:
     private:

@@ -6,64 +6,101 @@ Player::Player(physfsManager* manager,sf::RenderWindow *app)
     /*
 
     For when we have actual Sprites.
-
-    sprite = new AnimatedSprite();
-    walk = new Animation();
-    jump = new Animation();
-    attack = new Animation();
-
-    sf::Texture* tex = new sf::Texture();
-    void* spriteSheet = manager->loadFile("sprites/Player.png");
-    tex->loadFromMemory((void*)spriteSheet,sizeof(spriteSheet));
-    walk->setSpriteSheet(*tex);
-    jump->setSpriteSheet(*tex);
-    attack->setSpriteSheet(*tex);
     */
+    sprite = new AnimatedSprite(sf::seconds(0.2),true,true);
+    walkUp = new Animation();
+    walkDown = new Animation();
+    walkLeft = new Animation();
+    walkRight = new Animation();
+
+
+
+
+    sf::Texture* spriteSheet = manager->loadPng("sprites/Player.png");
+    walkUp->setSpriteSheet(*spriteSheet);
+    walkDown->setSpriteSheet(*spriteSheet);
+    walkLeft->setSpriteSheet(*spriteSheet);
+    walkRight->setSpriteSheet(*spriteSheet);
+
+    walkUp->addFrame(new sf::IntRect(0,0,32,32));
+    walkUp->addFrame(new sf::IntRect(32,0,32,32));
+    walkUp->addFrame(new sf::IntRect(0,0,32,32));
+    walkUp->addFrame(new sf::IntRect(64,0,32,32));
+
+    walkDown->addFrame(new sf::IntRect(0,32,32,32));
+    walkDown->addFrame(new sf::IntRect(32,32,32,32));
+    walkDown->addFrame(new sf::IntRect(0,32,32,32));
+    walkDown->addFrame(new sf::IntRect(64,32,32,32));
+
+    walkLeft->addFrame(new sf::IntRect(0,64,32,32));
+    walkLeft->addFrame(new sf::IntRect(32,64,32,32));
+    walkLeft->addFrame(new sf::IntRect(0,64,32,32));
+    walkLeft->addFrame(new sf::IntRect(64,64,32,32));
+
+    walkRight->addFrame(new sf::IntRect(0,96,32,32));
+    walkRight->addFrame(new sf::IntRect(32,96,32,32));
+    walkRight->addFrame(new sf::IntRect(0,96,32,32));
+    walkRight->addFrame(new sf::IntRect(64,96,32,32));
+
+    currentAnimation = walkDown;
 
     // For now draw a rectangle.
-    spr = new  sf::RectangleShape(sf::Vector2f(32,32));
-    spr->setPosition(0,0);
-    spr->setFillColor(sf::Color::Red);
+    //spr = new  sf::RectangleShape(sf::Vector2f(32,32));
+    //spr->setPosition(0,0);
+    //spr->setFillColor(sf::Color::Red);
 }
-void Player::Update(int dt) {
+void Player::Update(sf::Time dt) {
 
-    x = x + xvel;
-    y = y + yvel;
-
+    //x = x + x * dt.asSeconds();
+    //y = y + y * dt.asSeconds();
     // Move the player.
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && xvel < 0.2) {
-        xvel = xvel + 0.02;
+    sf::Vector2f movement(0.f, 0.f);
+
+    bool noKeyWasPressed = true;
+
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+        currentAnimation = walkRight;
+        movement.x += 80.f;
+        noKeyWasPressed = false;
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && yvel < 0.2) {
-        yvel = yvel + 0.02;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        currentAnimation = walkDown;
+        movement.y += 80.f;
+        noKeyWasPressed = false;
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && xvel > -0.2) {
-        xvel = xvel - 0.02;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+        currentAnimation = walkLeft;
+        movement.x -= 80.f;
+        noKeyWasPressed = false;
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && yvel > -0.2) {
-        yvel = yvel - 0.02;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+        currentAnimation = walkUp;
+        movement.y -= 80.f;
+
+        noKeyWasPressed = false;
     }
 
-    // Stop actions if keys are released.
-    if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) &&
-    !sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        xvel = 0;
-    }
+    sprite->play(*currentAnimation);
 
-    if ( !sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&&
-    !sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-        yvel = 0;
-    }
+    sprite->move(movement * dt.asSeconds());
 
+    if (noKeyWasPressed)
+        {
+            sprite->stop();
+        }
+
+    sprite->update(dt);
     // Update co-ordanates.
-    spr->setPosition(x,y);
+
+
 }
 void Player::draw() const {
 
-    win->draw(*spr);
+    win->draw(*sprite);
 
 }

@@ -7,7 +7,7 @@ class Player
     public:
         Player(physfsManager* manager, sf::RenderWindow*);
         virtual void draw() const;
-        void Update(int dt);
+        void Update(sf::Time dt);
     protected:
 
     private:
@@ -16,10 +16,12 @@ class Player
     float yvel = 0;
     float x = 0;
     float y = 0;
-    /*Animation* walk;
-    Animation* attack;
-    Animation* jump;
-    AnimatedSprite* sprite;*/
+    Animation* walkUp;
+    Animation* walkDown;
+    Animation* walkLeft;
+    Animation* walkRight;
+    Animation* currentAnimation;
+    AnimatedSprite* sprite;
     sf::RenderWindow *win;
 
     sf::RectangleShape* spr;
