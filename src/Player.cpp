@@ -4,7 +4,6 @@ Player::Player(physfsManager* manager,sf::RenderWindow *app)
 {
     win = app;
     /*
-
     For when we have actual Sprites.
     */
     sprite = new AnimatedSprite(sf::seconds(0.2),true,true);
@@ -12,9 +11,6 @@ Player::Player(physfsManager* manager,sf::RenderWindow *app)
     walkDown = new Animation();
     walkLeft = new Animation();
     walkRight = new Animation();
-
-
-
 
     sf::Texture* spriteSheet = manager->loadPng("sprites/Player.png");
     walkUp->setSpriteSheet(*spriteSheet);
@@ -43,22 +39,14 @@ Player::Player(physfsManager* manager,sf::RenderWindow *app)
     walkRight->addFrame(new sf::IntRect(64,96,32,32));
 
     currentAnimation = walkDown;
-
-    // For now draw a rectangle.
-    //spr = new  sf::RectangleShape(sf::Vector2f(32,32));
-    //spr->setPosition(0,0);
-    //spr->setFillColor(sf::Color::Red);
 }
 void Player::Update(sf::Time dt) {
 
-    //x = x + x * dt.asSeconds();
-    //y = y + y * dt.asSeconds();
     // Move the player.
 
     sf::Vector2f movement(0.f, 0.f);
 
     bool noKeyWasPressed = true;
-
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
         currentAnimation = walkRight;

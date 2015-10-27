@@ -16,10 +16,11 @@ sf::Uint8* physfsManager::loadFile(string fileName) {
     PHYSFS_read(file, buffer, 1, file_size);
     return buffer;
 }
+
+// Code below written by Phillip Stephens for Sakura, Reused for my own purposes.
+
 sf::Texture* physfsManager::loadPng(string m_filename) {
 
-    //if (!m_precached)
-        //sEngineRef().console().print(Core::Console::Info, "Loading texture %s@%s...", PHYSFS_getRealDir(m_filename.c_str()), m_filename.c_str());
 
     PHYSFS_file* file = PHYSFS_openRead(m_filename.c_str());
     if (file)
@@ -33,23 +34,12 @@ sf::Texture* physfsManager::loadPng(string m_filename) {
             if (m_data->loadFromMemory(data, PHYSFS_fileLength(file)))
             {
                 return m_data;
-                //m_isLoaded = true;
-                //sEngineRef().console().print(Core::Console::Message, "done.");
-            }
-            else
-            {
-                //_isLoaded = false;
-                //sEngineRef().console().print(Core::Console::Warning, "failed!");
             }
         }
 
         delete[] data;
         data = NULL;
         PHYSFS_close(file);
-    }
-    else
-    {
-        //sEngineRef().console().print(Core::Console::Warning, "Texture %s@%s does not exist", PHYSFS_getRealDir(m_filename.c_str()), m_filename.c_str());
     }
 }
 bool physfsManager::Run()
